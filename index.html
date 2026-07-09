@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katrin Ader | Mobile Medizinische Fußpflege Tangstedt</title>
-    <!-- Elegante und freundliche Schriftart -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -13,7 +12,6 @@
         :root {
             --logo-pink: #e6007e; /* Das strahlende Pink aus dem Herz */
             --logo-blue: #00aeef; /* Das frische Blau aus den Füßen */
-            --bg-friendly: rgba(255, 249, 251, 0.85); /* Zartes Wohlfühl-Rosa/Weiß mit Transparenz */
             --text-dark: #3c3c3c;
             --text-light: #ffffff;
         }
@@ -28,33 +26,41 @@
             font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
-            background-color: #ffffff;
+            /* Ein wunderschöner, sanfter Pastell-Hintergrund, der die Leere füllt */
+            background: linear-gradient(135deg, #fbcfe8 0%, #e0f2fe 50%, #ffffff 100%);
+            background-attachment: fixed;
             position: relative;
+            overflow-x: hidden;
         }
 
-        /* FIXIERTES LOGO IM HINTERGRUND (Scroll-Effekt) */
-        body::before {
+        /* Zusätzliche Design-Elemente für den Hintergrund (Soft Glow Effekte) */
+        body::before, body::after {
             content: "";
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80vw;
-            max-width: 500px;
-            height: 80vw;
-            max-height: 500px;
-            background-image: url('New logo .jpg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            opacity: 0.04; /* Extrem leicht und dezent, damit man den Text perfekt lesen kann */
-            z-index: -1; /* Liegt ganz hinten */
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
             pointer-events: none;
+            opacity: 0.5;
+        }
+        body::before {
+            top: 20%;
+            left: -100px;
+            background: var(--logo-pink);
+        }
+        body::after {
+            bottom: 20%;
+            right: -100px;
+            background: var(--logo-blue);
         }
 
         /* Navigation */
         header {
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             box-shadow: 0 2px 15px rgba(0,0,0,0.03);
             position: sticky;
             top: 0;
@@ -82,6 +88,7 @@
         .nav-logo img {
             height: 40px;
             width: auto;
+            border-radius: 4px;
         }
 
         .contact-btn-nav {
@@ -101,18 +108,15 @@
             transform: translateY(-1px);
         }
 
-        /* Heller, freundlicher Startbereich (Hero) */
+        /* Startbereich (Hero) */
         .hero {
-            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, var(--bg-friendly) 100%);
-            padding: 60px 20px;
+            padding: 40px 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-bottom: 1px solid rgba(230, 0, 126, 0.05);
         }
 
-        /* Katrins Bild ganz oben im Startbereich */
         .hero-image-container {
             max-width: 350px;
             width: 100%;
@@ -138,30 +142,32 @@
         }
 
         .hero h2 {
-            font-weight: 300;
+            font-weight: 400;
             font-size: 20px;
             color: var(--logo-pink);
             margin-bottom: 25px;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
-        /* Edler Infotext / Zitat */
+        /* Stilvolles Zitat */
         .quote-text {
             font-weight: 300;
             font-size: 16px;
-            color: #555;
+            color: #444;
             max-width: 750px;
             line-height: 1.8;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             border-left: 4px solid var(--logo-blue);
         }
 
         /* Sektionen Allgemein */
         section {
-            padding: 60px 20px;
+            padding: 50px 20px;
             max-width: 1100px;
             margin: 0 auto;
         }
@@ -178,11 +184,11 @@
             text-align: center;
             font-weight: 300;
             font-size: 15px;
-            color: #777;
-            margin-bottom: 40px;
+            color: #555;
+            margin-bottom: 35px;
         }
 
-        /* Zwei-Spalten-Layout (Über mich / Urkunde) */
+        /* Über mich Textbox */
         .about-container {
             display: flex;
             align-items: center;
@@ -195,20 +201,17 @@
             min-width: 300px;
             font-size: 16px;
             font-weight: 300;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
         .about-text strong {
             font-weight: 500;
             color: var(--logo-pink);
-        }
-
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
         }
 
         .about-image img {
@@ -218,7 +221,7 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.05);
         }
 
-        /* Leistungen */
+        /* Leistungskarten */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -226,17 +229,19 @@
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             padding: 30px;
             border-radius: 16px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.02);
-            border: 1px solid #f0f0f0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             transition: transform 0.3s ease;
         }
 
         .service-card:hover {
             transform: translateY(-3px);
-            border-color: rgba(0, 174, 239, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
         }
 
         .service-card h3 {
@@ -255,32 +260,28 @@
             font-weight: bold;
         }
 
-        /* Platzhalter Sektionen */
-        .bg-section {
-            background-color: var(--bg-friendly);
-            border-radius: 20px;
-            padding: 40px 20px;
-        }
-
+        /* Platzhalter Sektion */
         .placeholder-box {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.9);
             padding: 40px;
             border-radius: 16px;
             text-align: center;
-            border: 2px dashed rgba(0, 174, 239, 0.2);
-            color: #777;
+            border: 2px dashed rgba(0, 174, 239, 0.3);
+            color: #555;
             font-weight: 300;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
 
         /* Wichtige Hinweise */
         .info-box {
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 25px;
-            border-radius: 12px;
+            border-radius: 16px;
             text-align: center;
             border: 1px solid rgba(230, 0, 126, 0.15);
             max-width: 700px;
             margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
 
         .barzahlung-badge {
@@ -296,11 +297,14 @@
 
         /* Kontaktbereich */
         .contact-section {
-            background: linear-gradient(135deg, var(--bg-friendly) 0%, rgba(255,255,255,0.9) 100%);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             border-radius: 20px;
             padding: 40px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         .contact-links {
@@ -327,10 +331,12 @@
             text-align: center;
             padding: 40px 20px;
             font-size: 13px;
-            color: #888;
-            border-top: 1px solid #f0f0f0;
+            color: #666;
             font-weight: 300;
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            margin-top: 40px;
         }
 
         @media (max-width: 600px) {
@@ -344,7 +350,6 @@
 </head>
 <body>
 
-    <!-- Navigation -->
     <header>
         <div class="nav-container">
             <a href="#" class="nav-logo">
@@ -355,9 +360,7 @@
         </div>
     </header>
 
-    <!-- Startbereich / Hero mit Katrins Bild ganz oben -->
     <section class="hero">
-        <!-- Katrins Bild ganz oben -->
         <div class="hero-image-container">
             <img src="7bfc3341-e770-41c6-b8f2-109fc42a665b.jpeg" alt="Katrin Ader Mobile Medizinische Fußpflege">
         </div>
@@ -370,7 +373,6 @@
         </p>
     </section>
 
-    <!-- Über mich -->
     <section id="ueber-mich">
         <h2 class="section-title">Über mich &amp; meine Mission</h2>
         <div class="section-subtitle">Professionelle Pflege direkt bei Ihnen vor Ort</div>
@@ -385,8 +387,7 @@
         </div>
     </section>
 
-    <!-- Leistungen -->
-    <section class="bg-section" id="leistungen">
+    <section id="leistungen">
         <h2 class="section-title">Leistungen &amp; Behandlung</h2>
         <div class="section-subtitle">Individuelle Betreuung für gesunde Füße</div>
         <div class="services-grid">
@@ -405,7 +406,6 @@
         </div>
     </section>
 
-    <!-- PLATZHALTER: Preisliste & Lebenslauf -->
     <section id="preise-und-infos">
         <h2 class="section-title">Preise &amp; Qualifikationen</h2>
         <div class="section-subtitle">Hier entstehen demnächst die neuen Bereiche</div>
@@ -416,19 +416,17 @@
         </div>
     </section>
 
-    <!-- Wichtige Hinweise -->
-    <section class="bg-section" id="hinweise">
+    <section id="hinweise">
         <div class="info-box">
             <p>Ihre Gesundheit steht bei mir an erster Stelle. Bei jeder Behandlung folge ich strengsten <strong>Hygiene-Richtlinien</strong> nach medizinischem Standard.</p>
             <div class="barzahlung-badge">Nur Barzahlung möglich</div>
         </div>
     </section>
 
-    <!-- Kontakt -->
     <section id="kontakt">
         <div class="contact-section">
             <h2 class="section-title">Kontakt &amp; Terminvereinbarung</h2>
-            <p style="font-weight: 300;">Rufen Sie mich gerne an oder schreiben Sie mir eine E-Mail, um Ihren Wunschtermin zu vereinbaren.</p>
+            <p style="font-weight: 300; margin-bottom: 10px;">Rufen Sie mich gerne an oder schreiben Sie mir eine E-Mail, um Ihren Wunschtermin zu vereinbaren.</p>
             
             <div class="contact-links">
                 <a href="tel:017670427732" class="contact-link">📞 Mobil: 0176 / 70 42 77 32</a>
@@ -437,7 +435,6 @@
         </div>
     </section>
 
-    <!-- Fußzeile -->
     <footer>
         <p>&copy; 2026 Mobile Fußpflege Katrin Ader | Tangstedt und Umgebung</p>
     </footer>
